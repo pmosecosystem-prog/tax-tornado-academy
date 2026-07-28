@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>You're In! Claim Your Getaway — Tax Tornado Preparer Academy</title>
+<meta name="description" content="Your seat is confirmed. Claim your complimentary 4-day / 3-night Orlando getaway for two." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --tt-red:#E11D2A;
+    --tt-red-dark:#B3121D;
+    --tt-blue:#0B4DA2;
+    --tt-blue-dark:#072F63;
+    --ink:#0E1526;
+    --muted:#5A6478;
+    --paper:#FFFFFF;
+    --wash:#F4F6FB;
+    --gold:#F2B705;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    font-family:'Inter',system-ui,sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(1200px 500px at 15% -10%, rgba(225,29,42,.18), transparent 60%),
+      radial-gradient(1200px 600px at 100% 0%, rgba(11,77,162,.22), transparent 55%),
+      linear-gradient(160deg,#0B1220 0%,#111A2E 55%,#0B1220 100%);
+    min-height:100vh;
+    display:flex;
+    align-items:flex-start;
+    justify-content:center;
+    padding:28px 16px 60px;
+  }
+  .wrap{width:100%;max-width:680px;}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:rgba(242,183,5,.15);
+    color:var(--gold);
+    border:1px solid rgba(242,183,5,.4);
+    font-weight:600;font-size:13px;letter-spacing:.04em;text-transform:uppercase;
+    padding:7px 14px;border-radius:999px;margin-bottom:18px;
+  }
+  .hero{
+    text-align:center;color:#fff;margin-bottom:26px;
+  }
+  .hero h1{
+    font-family:'Poppins',sans-serif;font-weight:800;
+    font-size:clamp(30px,6vw,46px);line-height:1.05;letter-spacing:-.02em;
+    margin-bottom:14px;
+  }
+  .hero h1 .flame{
+    background:linear-gradient(90deg,var(--tt-red),var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero p{color:#C6CFE0;font-size:17px;line-height:1.55;max-width:520px;margin:0 auto;}
+  .card{
+    background:var(--paper);border-radius:22px;overflow:hidden;
+    box-shadow:0 30px 70px -25px rgba(0,0,0,.6);
+  }
+  .card-top{
+    background:linear-gradient(135deg,var(--tt-blue) 0%,var(--tt-blue-dark) 100%);
+    color:#fff;padding:30px 30px 26px;text-align:center;position:relative;
+  }
+  .card-top .pin{font-size:34px;line-height:1;margin-bottom:8px;}
+  .card-top h2{font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;margin-bottom:6px;}
+  .card-top .sub{color:#B9CBEA;font-size:15px;}
+  .stay{
+    display:flex;justify-content:center;gap:26px;flex-wrap:wrap;
+    margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);
+  }
+  .stay div{text-align:center;}
+  .stay .n{font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;}
+  .stay .l{font-size:12px;color:#B9CBEA;text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
+  .card-body{padding:30px;}
+  .cta{
+    display:block;text-align:center;text-decoration:none;
+    background:linear-gradient(135deg,var(--tt-red) 0%,var(--tt-red-dark) 100%);
+    color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;
+    padding:18px 24px;border-radius:14px;
+    box-shadow:0 14px 30px -10px rgba(225,29,42,.7);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .cta:hover{transform:translateY(-2px);box-shadow:0 20px 40px -10px rgba(225,29,42,.8);}
+  .cta small{display:block;font-family:'Inter';font-weight:500;font-size:13px;opacity:.9;margin-top:4px;}
+  .urgency{
+    text-align:center;color:var(--tt-red);font-weight:600;font-size:14px;
+    margin-top:14px;
+  }
+  .how{margin-top:26px;}
+  .how h3{font-family:'Poppins',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:14px;text-align:center;}
+  .steps{display:grid;gap:12px;}
+  .step{display:flex;gap:14px;align-items:flex-start;background:var(--wash);border-radius:12px;padding:14px 16px;}
+  .step .num{
+    flex:0 0 26px;height:26px;border-radius:50%;
+    background:var(--tt-blue);color:#fff;font-weight:700;font-size:13px;
+    display:flex;align-items:center;justify-content:center;font-family:'Poppins';
+  }
+  .step p{font-size:14.5px;line-height:1.5;color:#2A3346;}
+  .step b{color:var(--ink);}
+  .fine{
+    margin-top:22px;padding-top:18px;border-top:1px dashed #D7DEEB;
+    font-size:12.5px;line-height:1.6;color:var(--muted);
+  }
+  .fine b{color:#3A4356;}
+  .course{
+    text-align:center;margin-top:22px;padding:16px;border-radius:12px;
+    background:linear-gradient(135deg,rgba(11,77,162,.06),rgba(225,29,42,.06));
+    font-size:14px;color:#2A3346;
+  }
+  .course a{color:var(--tt-blue);font-weight:600;text-decoration:none;}
+  .foot{text-align:center;color:#8894AC;font-size:12.5px;margin-top:24px;line-height:1.6;}
+  .foot b{color:#C6CFE0;}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <span class="badge">✓ Enrollment Confirmed</span>
+      <h1>You're In — Now <span class="flame">Pack a Bag.</span></h1>
+      <p>Your seat in the Tax Tornado Preparer Academy is locked in. As a thank-you, your enrollment includes a complimentary getaway for two. Claim it below.</p>
+    </div>
+
+    <div class="card">
+      <div class="card-top">
+        <div class="pin">🏰</div>
+        <h2>Orlando, Florida</h2>
+        <div class="sub">Complimentary Resort Stay for Two Adults</div>
+        <div class="stay">
+          <div><div class="n">4 Days</div><div class="l">3 Nights</div></div>
+          <div><div class="n">2 Adults</div><div class="l">Included</div></div>
+          <div><div class="n">18 mo</div><div class="l">To Travel</div></div>
+        </div>
+      </div>
+      <div class="card-body">
+        <a class="cta" href="https://members.marketingboost.com/rv_certificate/zhlp9f" target="_blank" rel="noopener">
+          Claim My Free Getaway →
+          <small>Opens your certificate instantly</small>
+        </a>
+        <div class="urgency">⏳ Activate within 7 days — don't lose your spot.</div>
+
+        <div class="how">
+          <h3>How It Works</h3>
+          <div class="steps">
+            <div class="step"><div class="num">1</div><p><b>Click the button above</b> to open your personal vacation certificate.</p></div>
+            <div class="step"><div class="num">2</div><p><b>Activate within 7 days</b> — you cover only the resort taxes &amp; fees, then you have 18 months to pick your travel dates.</p></div>
+            <div class="step"><div class="num">3</div><p><b>Choose your dates &amp; resort</b> from the available options and enjoy your trip.</p></div>
+          </div>
+        </div>
+
+        <div class="course">
+          🎓 <b>Your course access is on its way.</b> Check your email (and spam folder) for your student portal login and Week 1 materials. Questions? Reply to your enrollment email anytime.
+        </div>
+
+        <div class="fine">
+          <b>The fine print:</b> Complimentary stay covers accommodations for 2 adults, 4 days / 3 nights. Recipient is responsible for resort taxes &amp; fees, travel to/from the destination, and any incidentals. Certificate must be activated within 7 days of receipt; travel booked within 18 months, subject to availability. Limit one complimentary hotel stay per household per year. Not redeemable for cash. Provided via Marketing Boost / redeemvacations.com.
+        </div>
+      </div>
+    </div>
+
+    <div class="foot">
+      <b>Tax Tornado Preparer Academy</b><br/>
+      Certified tax preparer training • IRS-based curriculum<br/>
+      A Tax Tornado program
+    </div>
+  </div>
+</body>
+</html>
