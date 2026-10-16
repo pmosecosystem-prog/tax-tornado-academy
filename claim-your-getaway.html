@@ -7,27 +7,27 @@
 <meta name="description" content="Your seat is confirmed. Claim your complimentary 4-day / 3-night Orlando getaway for two." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Archivo:wght@400;500;600&display=swap" rel="stylesheet" />
 <style>
   :root{
-    --tt-red:#E11D2A;
-    --tt-red-dark:#B3121D;
-    --tt-blue:#0B4DA2;
-    --tt-blue-dark:#072F63;
-    --ink:#0E1526;
-    --muted:#5A6478;
+    --tt-red:#ED1D23;
+    --tt-red-dark:#C8141A;
+    --tt-blue:#1655D9;
+    --tt-blue-dark:#0F3FAE;
+    --ink:#0F1F3A;
+    --muted:#566579;
     --paper:#FFFFFF;
-    --wash:#F4F6FB;
-    --gold:#F2B705;
+    --wash:#F2F7FC;
+    --gold:#8FE0FF;
   }
   *{box-sizing:border-box;margin:0;padding:0;}
   body{
-    font-family:'Inter',system-ui,sans-serif;
+    font-family:'Archivo',system-ui,sans-serif;
     color:var(--ink);
     background:
       radial-gradient(1200px 500px at 15% -10%, rgba(225,29,42,.18), transparent 60%),
       radial-gradient(1200px 600px at 100% 0%, rgba(11,77,162,.22), transparent 55%),
-      linear-gradient(160deg,#0B1220 0%,#111A2E 55%,#0B1220 100%);
+      linear-gradient(150deg,#1655D9 0%,#1B7FE6 55%,#22A3F2 100%);
     min-height:100vh;
     display:flex;
     align-items:flex-start;
@@ -47,7 +47,7 @@
     text-align:center;color:#fff;margin-bottom:26px;
   }
   .hero h1{
-    font-family:'Poppins',sans-serif;font-weight:800;
+    font-family:'Montserrat',sans-serif;font-weight:800;
     font-size:clamp(30px,6vw,46px);line-height:1.05;letter-spacing:-.02em;
     margin-bottom:14px;
   }
@@ -55,7 +55,7 @@
     background:linear-gradient(90deg,var(--tt-red),var(--gold));
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
-  .hero p{color:#C6CFE0;font-size:17px;line-height:1.55;max-width:520px;margin:0 auto;}
+  .hero p{color:#dcefff;font-size:17px;line-height:1.55;max-width:520px;margin:0 auto;}
   .card{
     background:var(--paper);border-radius:22px;overflow:hidden;
     box-shadow:0 30px 70px -25px rgba(0,0,0,.6);
@@ -65,38 +65,38 @@
     color:#fff;padding:30px 30px 26px;text-align:center;position:relative;
   }
   .card-top .pin{font-size:34px;line-height:1;margin-bottom:8px;}
-  .card-top h2{font-family:'Poppins',sans-serif;font-weight:700;font-size:24px;margin-bottom:6px;}
-  .card-top .sub{color:#B9CBEA;font-size:15px;}
+  .card-top h2{font-family:'Montserrat',sans-serif;font-weight:700;font-size:24px;margin-bottom:6px;}
+  .card-top .sub{color:#dcefff;font-size:15px;}
   .stay{
     display:flex;justify-content:center;gap:26px;flex-wrap:wrap;
     margin-top:18px;padding-top:18px;border-top:1px solid rgba(255,255,255,.18);
   }
   .stay div{text-align:center;}
-  .stay .n{font-family:'Poppins',sans-serif;font-weight:700;font-size:20px;}
-  .stay .l{font-size:12px;color:#B9CBEA;text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
+  .stay .n{font-family:'Montserrat',sans-serif;font-weight:700;font-size:20px;}
+  .stay .l{font-size:12px;color:#dcefff;text-transform:uppercase;letter-spacing:.05em;margin-top:2px;}
   .card-body{padding:30px;}
   .cta{
     display:block;text-align:center;text-decoration:none;
     background:linear-gradient(135deg,var(--tt-red) 0%,var(--tt-red-dark) 100%);
-    color:#fff;font-family:'Poppins',sans-serif;font-weight:700;font-size:19px;
+    color:#fff;font-family:'Montserrat',sans-serif;font-weight:700;font-size:19px;
     padding:18px 24px;border-radius:14px;
     box-shadow:0 14px 30px -10px rgba(225,29,42,.7);
     transition:transform .15s ease, box-shadow .15s ease;
   }
   .cta:hover{transform:translateY(-2px);box-shadow:0 20px 40px -10px rgba(225,29,42,.8);}
-  .cta small{display:block;font-family:'Inter';font-weight:500;font-size:13px;opacity:.9;margin-top:4px;}
+  .cta small{display:block;font-family:'Archivo';font-weight:500;font-size:13px;opacity:.9;margin-top:4px;}
   .urgency{
     text-align:center;color:var(--tt-red);font-weight:600;font-size:14px;
     margin-top:14px;
   }
   .how{margin-top:26px;}
-  .how h3{font-family:'Poppins',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:14px;text-align:center;}
+  .how h3{font-family:'Montserrat',sans-serif;font-size:15px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);margin-bottom:14px;text-align:center;}
   .steps{display:grid;gap:12px;}
   .step{display:flex;gap:14px;align-items:flex-start;background:var(--wash);border-radius:12px;padding:14px 16px;}
   .step .num{
     flex:0 0 26px;height:26px;border-radius:50%;
     background:var(--tt-blue);color:#fff;font-weight:700;font-size:13px;
-    display:flex;align-items:center;justify-content:center;font-family:'Poppins';
+    display:flex;align-items:center;justify-content:center;font-family:'Montserrat';
   }
   .step p{font-size:14.5px;line-height:1.5;color:#2A3346;}
   .step b{color:var(--ink);}
@@ -112,7 +112,7 @@
   }
   .course a{color:var(--tt-blue);font-weight:600;text-decoration:none;}
   .foot{text-align:center;color:#8894AC;font-size:12.5px;margin-top:24px;line-height:1.6;}
-  .foot b{color:#C6CFE0;}
+  .foot b{color:#dcefff;}
 </style>
 </head>
 <body>
