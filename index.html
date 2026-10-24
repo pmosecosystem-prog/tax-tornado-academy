@@ -183,9 +183,33 @@
   footer .brand{color:var(--storm-navy)}
   footer a{color:#1655D9}
   .hero .price-flag .amt,.pricebox .amount,.cohort .opens,.cohort h4,.step .num,.access-visual .big,.faq summary:after,.brand{font-weight:800}
+
+  /* ===== CLASS 1 DEADLINE BANNER (auto-switches to Class 2 after Sat Oct 24, 9 PM ET) ===== */
+  .deadline{background:var(--bolt-red);color:#fff;text-align:center;font-weight:700;font-size:14px;padding:10px 16px;letter-spacing:.2px}
+  .deadline a{color:#fff;text-decoration:underline;text-underline-offset:3px;margin-left:8px;white-space:nowrap}
+  .deadline .cd{display:inline-block;background:rgba(255,255,255,.18);border-radius:6px;padding:2px 8px;margin:0 6px;font-variant-numeric:tabular-nums}
 </style>
 </head>
 <body>
+
+<!-- CLASS 1 DEADLINE BANNER -->
+<div class="deadline" id="deadline" role="status">
+  <span id="dl-text">Class 1 enrollment closes <b>Saturday, Oct 24 at 9 PM ET</b></span><span class="cd" id="dl-cd" hidden></span><a href="#enroll">Claim your seat →</a>
+</div>
+<script>
+(function(){
+  var end = Date.UTC(2026, 9, 25, 1, 0, 0); // Sat Oct 24, 9:00 PM EDT
+  var t = document.getElementById('dl-text'), c = document.getElementById('dl-cd');
+  function tick(){
+    var ms = end - Date.now();
+    if (ms <= 0) { t.innerHTML = 'Class 1 is full. <b>Class 2 opens Sunday, Nov 8</b>'; c.hidden = true; return; }
+    var h = Math.floor(ms/3600000), m = Math.floor(ms%3600000/60000), sec = Math.floor(ms%60000/1000);
+    c.textContent = h + 'h ' + (m<10?'0':'') + m + 'm ' + (sec<10?'0':'') + sec + 's left'; c.hidden = false;
+    setTimeout(tick, 1000);
+  }
+  tick();
+})();
+</script>
 
 <!-- NAV -->
 <nav class="nav">
