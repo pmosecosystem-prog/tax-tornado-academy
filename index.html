@@ -184,7 +184,7 @@
   footer a{color:#1655D9}
   .hero .price-flag .amt,.pricebox .amount,.cohort .opens,.cohort h4,.step .num,.access-visual .big,.faq summary:after,.brand{font-weight:800}
 
-  /* ===== CLASS 1 DEADLINE BANNER (auto-switches to Class 2 after Sat Oct 24, 9 PM ET) ===== */
+  /* ===== ENROLLMENT DEADLINE BANNER (final 2026 class; closes Sat Nov 21, 9 PM ET) ===== */
   .deadline{background:var(--bolt-red);color:#fff;text-align:center;font-weight:700;font-size:14px;padding:10px 16px;letter-spacing:.2px}
   .deadline a{color:#fff;text-decoration:underline;text-underline-offset:3px;margin-left:8px;white-space:nowrap}
   .deadline .cd{display:inline-block;background:rgba(255,255,255,.18);border-radius:6px;padding:2px 8px;margin:0 6px;font-variant-numeric:tabular-nums}
@@ -192,17 +192,18 @@
 </head>
 <body>
 
-<!-- CLASS 1 DEADLINE BANNER -->
+<!-- ENROLLMENT DEADLINE BANNER -->
 <div class="deadline" id="deadline" role="status">
-  <span id="dl-text">Class 1 enrollment closes <b>Saturday, Oct 24 at 9 PM ET</b></span><span class="cd" id="dl-cd" hidden></span><a href="#enroll">Claim your seat →</a>
+  <span id="dl-text">Last class of 2026 opens Nov 22. Enrollment closes <b>Saturday, Nov 21 at 9 PM ET</b></span><span class="cd" id="dl-cd" hidden></span><a href="#enroll">Claim your seat →</a>
 </div>
 <script>
 (function(){
-  var end = Date.UTC(2026, 9, 25, 1, 0, 0); // Sat Oct 24, 9:00 PM EDT
+  var end = Date.UTC(2026, 10, 22, 2, 0, 0); // Sat Nov 21, 9:00 PM EST
   var t = document.getElementById('dl-text'), c = document.getElementById('dl-cd');
   function tick(){
     var ms = end - Date.now();
-    if (ms <= 0) { t.innerHTML = 'Class 1 is full. <b>Class 2 opens Sunday, Nov 8</b>'; c.hidden = true; return; }
+    if (ms <= 0) { t.innerHTML = 'Enrollment for the Nov 22 class is closed. <b>2027 class dates coming soon</b>'; c.hidden = true; return; }
+    if (ms > 72*3600000) { c.hidden = true; setTimeout(tick, 60000); return; }
     var h = Math.floor(ms/3600000), m = Math.floor(ms%3600000/60000), sec = Math.floor(ms%60000/1000);
     c.textContent = h + 'h ' + (m<10?'0':'') + m + 'm ' + (sec<10?'0':'') + sec + 's left'; c.hidden = false;
     setTimeout(tick, 1000);
@@ -258,7 +259,7 @@
       <div class="step">
         <div class="num">1</div>
         <h3>Enroll &amp; Get Access</h3>
-        <p>Secure your seat for $450. Your student portal login and Week 1 lessons open on your class start date.</p>
+        <p>Secure your seat for $450. Your student portal login and Week 1 lessons open Sunday, Nov 22.</p>
       </div>
       <div class="step">
         <div class="num">2</div>
@@ -334,12 +335,10 @@
 <section class="enroll" id="enroll">
   <div class="wrap" style="text-align:center">
     <div class="section-tag">Enroll Today</div>
-    <h2 class="section-title">Three bootcamps left in 2026. Pick your class.</h2>
-    <p class="lead" style="margin:0 auto">Each class is a two-week bootcamp. Seats are limited so the live Q&As stay personal.</p>
-    <div class="cohorts" id="classes">
-        <div class="cohort featured"><span class="badge">Next Class</span><h4>Class 1</h4><div class="opens">Opens Oct 25</div><div class="qa"><b>Q&amp;A 1:</b> Sun Nov 1 · 7 PM ET</div><div class="qa"><b>Q&amp;A 2:</b> Thu Nov 5 · 7 PM ET</div><div class="qa" style="color:var(--bolt-red);font-weight:600"><b>Cert Test:</b> Sun Nov 8 · 7 PM ET</div><a href="https://buy.stripe.com/6oU8wOfNs9568hE80D9fW04?client_reference_id=class-2026-10-25" class="btn btn-primary" target="_blank" rel="noopener" style="display:block;text-align:center;margin-top:14px">Enroll in Class 1</a></div>
-        <div class="cohort"><h4>Class 2</h4><div class="opens">Opens Nov 8</div><div class="qa"><b>Q&amp;A 1:</b> Sun Nov 15 · 7 PM ET</div><div class="qa"><b>Q&amp;A 2:</b> Thu Nov 19 · 7 PM ET</div><div class="qa" style="color:var(--bolt-red);font-weight:600"><b>Cert Test:</b> Sun Nov 22 · 7 PM ET</div><a href="https://buy.stripe.com/6oU8wOfNs9568hE80D9fW04?client_reference_id=class-2026-11-08" class="btn btn-primary" target="_blank" rel="noopener" style="display:block;text-align:center;margin-top:14px">Enroll in Class 2</a></div>
-        <div class="cohort"><h4>Class 3</h4><div class="opens">Opens Nov 22</div><div class="qa"><b>Q&amp;A 1:</b> Sun Nov 29 · 7 PM ET</div><div class="qa"><b>Q&amp;A 2:</b> Thu Dec 3 · 7 PM ET</div><div class="qa" style="color:var(--bolt-red);font-weight:600"><b>Cert Test:</b> Sun Dec 6 · 7 PM ET</div><a href="https://buy.stripe.com/6oU8wOfNs9568hE80D9fW04?client_reference_id=class-2026-11-22" class="btn btn-primary" target="_blank" rel="noopener" style="display:block;text-align:center;margin-top:14px">Enroll in Class 3</a></div>
+    <h2 class="section-title">One bootcamp left in 2026. It opens Nov 22.</h2>
+    <p class="lead" style="margin:0 auto">A two-week bootcamp that gets you certified before tax season. Seats are limited so the live Q&As stay personal.</p>
+    <div class="cohorts" id="classes" style="grid-template-columns:1fr;max-width:420px">
+        <div class="cohort featured"><span class="badge">Last Class of 2026</span><h4>Two-Week Bootcamp</h4><div class="opens">Opens Nov 22</div><div class="qa"><b>Q&amp;A 1:</b> Sun Nov 29 · 7 PM ET</div><div class="qa"><b>Q&amp;A 2:</b> Thu Dec 3 · 7 PM ET</div><div class="qa" style="color:var(--bolt-red);font-weight:600"><b>Cert Test:</b> Sun Dec 6 · 7 PM ET</div><a href="https://buy.stripe.com/6oU8wOfNs9568hE80D9fW04?client_reference_id=class-2026-11-22" class="btn btn-primary" target="_blank" rel="noopener" style="display:block;text-align:center;margin-top:14px">Enroll Now — $450</a></div>
       </div>
       <div class="pricebox">
       <div class="top">
@@ -358,7 +357,7 @@
           <li>Gift: 4-day / 3-night Orlando resort stay for two (you pay taxes, fees and travel)</li>
         </ul>
         <!-- Stripe Payment Link -->
-        <a href="#classes" class="btn btn-primary" id="stripe-cta">Choose Your Class Above</a>
+        <a href="https://buy.stripe.com/6oU8wOfNs9568hE80D9fW04?client_reference_id=class-2026-11-22" class="btn btn-primary" id="stripe-cta" target="_blank" rel="noopener">Enroll Now — $450</a>
         <div class="guarantee">🔒 Secure payment via Stripe</div>
         <p style="font-size:12px;line-height:1.5;color:var(--muted);text-align:left;margin-top:16px">Orlando gift: a complimentary 4-day / 3-night resort stay for two adults, compliments of Tax Tornado Academy. You pay the resort taxes and fees, your travel to and from Orlando, and incidentals. Activate your certificate within 7 days of receiving it and book within 18 months. Dates and resorts are subject to availability. One complimentary stay per household per year. Not redeemable for cash.</p>
       </div>
@@ -373,22 +372,22 @@
     <h2 class="section-title">Before you enroll</h2>
     <details><summary>Do I need any experience?</summary><p>No prior experience is required. The course starts with the foundations of the U.S. tax system in Module 1 and builds you all the way up to business taxation, ethics, due diligence, and IRS representation.</p></details>
     <details><summary>What does this certification qualify me to do?</summary><p>You earn the Tax Tornado certification. The training covers U.S. federal returns and all 50 states. To prepare returns for pay you also need a PTIN from the IRS, and some states have their own preparer rules. The curriculum is built on IRS publications and current tax law, and your instructor is VITA-certified with 20+ years of experience.</p></details>
-    <details><summary>How do I get certified?</summary><p>After the 12 modules and the Module 12 comprehensive review, you sit the final certification test through the Tax Tornado software on the last Sunday of your two-week class (Nov 8, Nov 22 or Dec 6) at 7 PM ET. Pass it and you're certified by Tax Tornado.</p></details>
+    <details><summary>How do I get certified?</summary><p>After the 12 modules and the Module 12 comprehensive review, you sit the final certification test through the Tax Tornado software on the last Sunday of the two-week class (Sunday, Dec 6) at 7 PM ET. Pass it and you're certified by Tax Tornado.</p></details>
     <details><summary>Is the class live or self-paced?</summary><p>Both. The 12 modules are self-paced in your online student portal, and each week of your bootcamp includes a live Q&A session with your instructor on Microsoft Teams. Can't make it live? Every session is recorded and sent to you.</p></details>
     <details><summary>What do I get for $450?</summary><p>All 12 self-paced interactive modules, both live Q&A sessions, the IRS-based curriculum and final certification exam, the Client Launch Track with marketing and client acquisition training, the workbook and resources, and recordings of every live session.</p></details>
     <details><summary>Will you teach me how to get clients?</summary><p>Yes. The Client Launch Track runs beside the tax modules from Day 1. Each week you take one marketing step, with ready-to-use scripts and graphics, so you can start building your client list before you finish the course. Results depend on your own effort. We do not promise a number of clients or an income.</p></details>
     <details><summary>How much can I earn as a tax preparer?</summary><p>Here is the math. At a $400 average fee, 50 returns is $20,000 in one three-month tax season. This is an example, not a promise or guarantee of income. Your results depend on how many clients you serve, what you charge and the work you put in.</p></details>
     <details><summary>Can I split the payment?</summary><p>Yes. At checkout you can choose Afterpay or Klarna to break the $450 into smaller payments. Approval and payment terms come from Afterpay or Klarna.</p></details>
     <details><summary>What is the Orlando gift?</summary><p>Every enrolled student receives a certificate for a complimentary 4-day / 3-night resort stay in Orlando, Florida, for two adults. The room is the gift. You pay the resort taxes and fees, your travel to and from Orlando, and incidentals. Activate your certificate within 7 days of receiving it and book within 18 months. Dates and resorts are subject to availability. One complimentary stay per household per year. Not redeemable for cash. The stay is compliments of Tax Tornado Academy.</p></details>
-    <details><summary>When do the classes start?</summary><p>There are three two-week bootcamps left in 2026. Class 1 opens Sunday, Oct 25 (live Q&As Sunday, Nov 1 and Thursday, Nov 5; certification test Sunday, Nov 8). Class 2 opens Sunday, Nov 8 (live Q&As Sunday, Nov 15 and Thursday, Nov 19; test Sunday, Nov 22). Class 3 opens Sunday, Nov 22 (live Q&As Sunday, Nov 29 and Thursday, Dec 3; test Sunday, Dec 6). All live sessions and tests are at 7 PM ET.</p></details>
-    <details><summary>How do I pay?</summary><p>Pick your class and click its Enroll button. You pay securely through Stripe by card, or split the payment with Afterpay or Klarna. Two weeks later, you sit your certification test.</p></details>
+    <details><summary>When does the class start?</summary><p>The last two-week bootcamp of 2026 opens Sunday, Nov 22. Live Q&As are Sunday, Nov 29 and Thursday, Dec 3, and the certification test is Sunday, Dec 6. All live sessions and the test are at 7 PM ET. Enrollment closes Saturday, Nov 21 at 9 PM ET.</p></details>
+    <details><summary>How do I pay?</summary><p>Click the Enroll button. You pay securely through Stripe by card, or split the payment with Afterpay or Klarna. Two weeks later, you sit your certification test.</p></details>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section class="final">
   <div class="wrap">
-    <h2>Your tax career starts Oct 25.</h2>
+    <h2>Your tax career starts Nov 22.</h2>
     <p>Join the Tax Tornado Preparer Academy and go from zero to filing-ready — with live support the whole way.</p>
     <a href="#enroll" class="btn">Enroll Now — $450</a>
   </div>
